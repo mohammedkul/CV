@@ -14,13 +14,16 @@ const routes = extractRoutes({
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  // استخدم مسارات نسبية عند البناء لتجنّب imports المطلقة التي تكسر Rollup.
+  // عند التطوير يبقى '/' لراحة التيرمينال المحلي.
+  base: mode === 'development' ? '/' : './',
   server: {
     host: "::",
     port: 8080
   },
   plugins: [
   react(),
-  Sitemap({ hostname: "https://placeholder-internal.ezsite.ai", dynamicRoutes: routes })],
+  Sitemap({ hostname: "https://mohammedkul.github.io/CV", dynamicRoutes: routes })],
 
   resolve: {
     alias: {
