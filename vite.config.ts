@@ -14,9 +14,8 @@ const routes = extractRoutes({
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  // استخدم مسارات نسبية عند البناء لتجنّب imports المطلقة التي تكسر Rollup.
-  // عند التطوير يبقى '/' لراحة التيرمينال المحلي.
-  base: mode === 'development' ? '/' : './',
+  // للنشر على https://mohammedkul.github.io/CV/
+  base: mode === 'development' ? '/' : '/CV/',
   server: {
     host: "::",
     port: 8080
